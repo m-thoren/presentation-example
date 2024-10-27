@@ -4,8 +4,8 @@ export default function HomePage() {
 	return (
 		<Main
 			title="Stund för frågor 🥳"
-			pageNumber={-1}
-			prevLink={undefined}
+			pageNumber={1}
+			prevLink={'/nextjs/build-api'}
 			nextLink={undefined}
 		>
 			<p>Har vi några frågor?</p>

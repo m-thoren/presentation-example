@@ -10,7 +10,7 @@ export default async function Person() {
 			title="Server Rendering"
 			pageNumber={2}
 			prevLink="/nextjs"
-			nextLink="/person"
+			nextLink="/nextjs/build-api"
 		>
 			<p>Sök efter en person:</p>
 			<Button asChild>

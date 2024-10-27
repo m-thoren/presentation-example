@@ -1,9 +1,9 @@
+import BackButton from '@/components/BackButton'
 import PetInfo from '@/components/Pet'
-import { Button } from '@/components/ui/button'
 import { getPerson } from '@/db/person'
 import { personSchema } from '@/schemas/common'
-import { ArrowLeft, Loader } from 'lucide-react'
-import Link from 'next/link'
+import { Loader } from 'lucide-react'
+import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
 export default async function ShowPerson({
@@ -15,19 +15,7 @@ export default async function ShowPerson({
 
 	const parsedPerson = personSchema.safeParse(personRes)
 	if (!parsedPerson.success) {
-		return (
-			<div className="flex flex-1 flex-col gap-4 p-8">
-				<div className="rounded-md bg-foreground p-8 text-background">
-					Kunde inte visa person
-				</div>
-				<Button asChild variant={'secondary'}>
-					<Link href={'/nextjs/person'}>
-						Gå tillbaka
-						<ArrowLeft />
-					</Link>
-				</Button>
-			</div>
-		)
+		return notFound()
 	}
 
 	const person = parsedPerson.data
@@ -59,12 +47,7 @@ export default async function ShowPerson({
 			) : (
 				<p>{person.name} har inga husdjur</p>
 			)}
-			<Button asChild variant={'secondary'}>
-				<Link href={'/nextjs/person'}>
-					Gå tillbaka
-					<ArrowLeft />
-				</Link>
-			</Button>
+			<BackButton />
 		</div>
 	)
 }
