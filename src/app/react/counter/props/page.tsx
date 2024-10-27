@@ -6,8 +6,8 @@ export default function CounterPage() {
 		<Main
 			title="Hur skickar vi data till en komponent?"
 			pageNumber={3}
-			prevLink="/counter"
-			nextLink="/counter/conditional"
+			prevLink="/react/counter"
+			nextLink="/react/counter/conditional"
 		>
 			<CounterWithProps initialValue={12} />
 		</Main>

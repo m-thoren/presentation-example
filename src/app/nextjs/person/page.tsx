@@ -7,18 +7,19 @@ import Link from 'next/link'
 export default async function Person() {
 	return (
 		<Main
-			title="NextJS"
-			pageNumber={10}
-			prevLink="/counter/shared-state/context-provider/with-context"
+			title="Server Rendering"
+			pageNumber={2}
+			prevLink="/nextjs"
 			nextLink="/person"
 		>
+			<p>Sök efter en person:</p>
 			<Button asChild>
-				<Link href={'/person/1'}>
+				<Link href={'/nextjs/person/1'}>
 					Mathias <ArrowRight />
 				</Link>
 			</Button>
 			<Button asChild>
-				<Link href={'/person/2'}>
+				<Link href={'/nextjs/person/2'}>
 					Bob
 					<ArrowRight />
 				</Link>

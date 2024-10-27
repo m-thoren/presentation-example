@@ -5,11 +5,14 @@ export default function ConditionalFalsyPage() {
 		<Main
 			title='JavaScript och "falsy"-värden'
 			pageNumber={5}
-			prevLink="/counter/conditional"
-			nextLink="/counter/effect"
+			prevLink="/react/counter/conditional"
+			nextLink="/react/counter/effect"
 		>
-			<div className="text-background rounded-md bg-gray-400 p-6">
+			<div className="rounded-md bg-gray-400 p-6 text-background">
 				condition && saken att visa
+			</div>
+			<div className="rounded-md bg-gray-400 p-6 text-background">
+				condition ? Om sant visa detta : Om falskt visa detta
 			</div>
 			<div>
 				<p className="text-white">Värden som räknas som falsy:</p>

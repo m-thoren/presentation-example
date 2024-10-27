@@ -6,8 +6,8 @@ export default function ConditionalPage() {
 		<Main
 			title="Vi vill visa något när vi når ett visst antal klick"
 			pageNumber={4}
-			prevLink="/counter/props"
-			nextLink="/counter/conditional/falsy"
+			prevLink="/react/counter/props"
+			nextLink="/react/counter/conditional/falsy"
 		>
 			<CounterWithConditional />
 		</Main>

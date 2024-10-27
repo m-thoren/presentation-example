@@ -6,8 +6,8 @@ export default function CounterPage() {
 		<Main
 			title="Vi vill visa en notifikation efter ett visst antal klick"
 			pageNumber={6}
-			prevLink="/counter/conditional/falsy"
-			nextLink="/counter/shared-state"
+			prevLink="/react/counter/conditional/falsy"
+			nextLink="/react/counter/shared-state"
 		>
 			<CounterWithToast />
 		</Main>

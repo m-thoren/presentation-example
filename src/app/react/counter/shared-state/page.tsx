@@ -6,8 +6,8 @@ export default function CounterPage() {
 		<Main
 			title="Vi vill att flera komponenter har tillgång till samma state"
 			pageNumber={7}
-			prevLink="/counter/effect"
-			nextLink="/counter/shared-state/context-provider"
+			prevLink="/react/counter/effect"
+			nextLink="/react/counter/shared-state/context-provider"
 		>
 			<CountersWithSharedState />
 		</Main>

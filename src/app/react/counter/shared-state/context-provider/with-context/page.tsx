@@ -6,8 +6,8 @@ export default function CounterPage() {
 		<Main
 			title="Context Provider"
 			pageNumber={9}
-			prevLink="/counter/shared-state/context-provider"
-			nextLink="/person"
+			prevLink="/react/counter/shared-state/context-provider"
+			nextLink="/react/data-binding"
 		>
 			<CountersWithContext />
 		</Main>

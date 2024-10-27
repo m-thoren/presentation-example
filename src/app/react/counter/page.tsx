@@ -6,8 +6,8 @@ export default function CounterPage() {
 		<Main
 			title="React-applikationer byggs med komponenter"
 			pageNumber={2}
-			prevLink="/"
-			nextLink="/counter/props"
+			prevLink="/react"
+			nextLink="/react/counter/props"
 		>
 			<h2>Så vad är en komponent?</h2>
 			<Counter />

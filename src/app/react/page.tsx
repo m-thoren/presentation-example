@@ -6,7 +6,7 @@ export default function HomePage() {
 			title="Välkommen till React!"
 			pageNumber={1}
 			prevLink={undefined}
-			nextLink="/counter"
+			nextLink="/react/counter"
 		>
 			<h2>Vad är React?</h2>
 			<p>

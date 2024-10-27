@@ -1,6 +1,9 @@
 import PetInfo from '@/components/Pet'
+import { Button } from '@/components/ui/button'
 import { getPerson } from '@/db/person'
 import { personSchema } from '@/schemas/common'
+import { ArrowLeft, Loader } from 'lucide-react'
+import Link from 'next/link'
 import { Suspense } from 'react'
 
 export default async function ShowPerson({
@@ -17,6 +20,12 @@ export default async function ShowPerson({
 				<div className="rounded-md bg-foreground p-8 text-background">
 					Kunde inte visa person
 				</div>
+				<Button asChild variant={'secondary'}>
+					<Link href={'/nextjs/person'}>
+						Gå tillbaka
+						<ArrowLeft />
+					</Link>
+				</Button>
 			</div>
 		)
 	}
@@ -36,7 +45,12 @@ export default async function ShowPerson({
 					{person.petIds.map((petId) => (
 						<Suspense
 							key={petId}
-							fallback={<p>Hämtar husdjur...</p>}
+							fallback={
+								<div className="flex flex-row items-center">
+									Hämtar husdjur{' '}
+									<Loader className="animate-spin" />
+								</div>
+							}
 						>
 							<PetInfo petId={petId} />
 						</Suspense>
@@ -45,6 +59,12 @@ export default async function ShowPerson({
 			) : (
 				<p>{person.name} har inga husdjur</p>
 			)}
+			<Button asChild variant={'secondary'}>
+				<Link href={'/nextjs/person'}>
+					Gå tillbaka
+					<ArrowLeft />
+				</Link>
+			</Button>
 		</div>
 	)
 }
