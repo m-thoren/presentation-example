@@ -1,34 +1,60 @@
 import Main from '@/components/Main'
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from '@/components/ui/table'
+
+const features: Array<{ name: string; description: string }> = [
+	{
+		name: 'Komponenter',
+		description: 'Organisera och återanvänd kod på ett enklare sätt',
+	},
+	{
+		name: 'Reaktivt',
+		description:
+			'Kraftfulla inbyggda verktyg för att ge interaktivitet till sidor',
+	},
+	{
+		name: 'Stort ekosystem',
+		description:
+			'Eftersom React är det mest använda JavaScript-ramverket finns det många paket och mycket hjälp att hitta',
+	},
+	{
+		name: 'JSX',
+		description:
+			'Med JSX kan vi skriva både JavaScript och HTML tillsammans för enklare utveckling',
+	},
+]
 
 export default function HomePage() {
 	return (
 		<Main
 			title="Välkommen till React!"
 			pageNumber={1}
-			prevLink={undefined}
+			prevLink={'/'}
 			nextLink="/react/counter"
 		>
-			<h2>Vad är React?</h2>
-			<p>
-				JavaScript kan snabbt växa till ett ohållbart monster. Hur kan
-				vi organisera koden enklare? Det var här React föddes. React är
-				ett JavaScript-ramverk som skapades av Facebook för att göra
-				reaktiva (därav React 😉) sidor på ett enhetligt sätt som va
-				lättare att underhålla. React använder sig av en spegling av
-				DOM(förklara):ens HTML i JavasScript, en Virtuell DOM. Med hjälp
-				av den virtuella DOM:en kan React diffa ändringar i
-				applikationen för att lista ut vilka delar av sidans HTML-kod
-				som behöver uppdateras. React fungerar som en så kallad Singel
-				Page Application (SPA). Detta betyder är att man gör ett anrop
-				till en server, och den svarar med en enkel HTML-sida, som ett
-				skal, och inkluderar ett större mängd JavaScript. JavaScript
-				bygger upp en VDOM och synkar den med DOM som på så sätt visar
-				upp en sida. Det betyder också att för att visa en sida i en
-				sådan applikation måste man först vänta på att servern svarar
-				med skalen, sedan på att webbläsaren kompilerar JavaScripten som
-				sedan kan bygga upp sidan. Varför använder vi då React om
-				Javascript är ohållbart?
-			</p>
+			<h2>React är ett JavaScript-ramverk, som ger följande fördelar:</h2>
+			<Table>
+				<TableHeader>
+					<TableRow>
+						<TableHead>Feature</TableHead>
+						<TableHead>Beskrivning</TableHead>
+					</TableRow>
+				</TableHeader>
+				<TableBody>
+					{features.map((feature, index) => (
+						<TableRow key={index}>
+							<TableCell>{feature.name}</TableCell>
+							<TableCell>{feature.description}</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
 		</Main>
 	)
 }

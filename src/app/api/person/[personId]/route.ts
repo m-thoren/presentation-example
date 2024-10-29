@@ -1,5 +1,4 @@
 import { getPerson } from '@/db/person'
-import { type Person } from '@/schemas/common'
 import { NextResponse } from 'next/server'
 
 export async function GET(
